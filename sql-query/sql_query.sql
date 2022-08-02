@@ -1,0 +1,1 @@
+CREATE TABLE anime_list (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, title VARCHAR(512) NOT NULL, description VARCHAR(4096),episodes INT(6), aired DATETIME default null, finished DATETIME default null, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
