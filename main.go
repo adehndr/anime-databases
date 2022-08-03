@@ -7,6 +7,7 @@ import (
 
 	"github.com/adehndr/anime-databases/app"
 	"github.com/adehndr/anime-databases/repository"
+	"github.com/adehndr/anime-databases/service"
 )
 
 func main() {
@@ -17,11 +18,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	animeListRepository := repository.NewAnimeListRepository(dbMySql)
-	data, err := animeListRepository.FindAll(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(data)
+	animeListSevice := service.NewAnimeListService(animeListRepository)
+	fmt.Println(animeListSevice.FindAll(context.Background()))
 }
